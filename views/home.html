@@ -1,0 +1,74 @@
+{% extends "base.html" %} {% block content %}
+
+
+
+<div class="container">
+    <div class="row">
+        <h1>Metrobikes Los Angeles</h1>
+    </div>
+    <div class="row>">
+        <h2>Enter your current location:</h2>
+    </div>
+    <p style="color:red">{{errMessage}}</p>
+    <form method="GET" action="/bikes">
+    <div class="row">
+        <div class="col-sm">
+            <input type="text" id="srcLat" name="latitude" placeholder="Latitude"/>
+        </div>
+        <div class="col-sm">
+            <input type="text" id="srcLong" name="longitude" placeholder="Longitude"/>
+        </div>             
+        <div class="col-sm">
+            <input type="number" name="number" min="1" value="1"/>        
+        </div>                
+        
+    </div>
+    <div class="row">    
+        <div class="col-sm">
+            <button type="submit" class="btn btn-primary" formaction="/bikes">Get nearest stations with bikes</button>
+        </div>
+        <div class="col-sm">
+            <button type="submit" class="btn btn-primary" formaction="/docks">Get nearest stations with docks</button>
+        </div>
+    <div class="row>">
+         <h2>Enter your destination:</h2>
+    </div>
+
+    <div class="col-sm">
+        <input type="text" id="destLat" name="dest-latitude" placeholder="Latitude"/>
+    </div>
+    <div class="col-sm">
+        <input type="text" id="destLong" name="dest-longitude" placeholder="Longitude"/>
+    </div>  
+    <div class="row">
+        <div class="col-sm">
+            <button type="submit" class="btn btn-primary" formaction="/route">Get route to destination</button>
+        </div>
+    </div>
+    </div>
+
+    </form>
+    
+    
+    
+   <!-- <h2>Get nearest stations with docks available
+    <form method="GET" action="/docks">
+    <label for="latitdue">Latitude</label>
+    <input type="text" name="latitude"/>
+    <label for="lognitude">Longitude</>
+    <input type="text" name="longitude"/>
+    <label for="number">Number</label>
+    <input type="number" name="number" min="1" default="1"/>
+    <button type="submit">Search</button>
+    </form> //-->
+</div>
+
+
+<div class="d-flex justify-content-center">
+    <div class="w-75">
+        {{map1|safe}}
+    </div>        
+</div>
+
+
+{% endblock %}

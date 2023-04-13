@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block content %}
+
+
+<div class="container">
+    <h1>Metrobikes Los Angeles</h1>
+    <h2>Get nearest stations with bikes available
+    <form method="GET" action="/bikes">
+    <label for="latitdue">Latitude</label>
+    <input type="text" name="latitude"/>
+    <label for="lognitude">Longitude</>
+    <input type="text" name="longitude"/>
+    <label for="number">Number</label>
+    <input type="number" name="number" min="1" default="1"/>
+    <button type="submit">Search</button>
+    </form>
+    
+    <h2>Get nearest stations with docks available
+    <form method="GET" action="/docks">
+    <label for="latitdue">Latitude</label>
+    <input type="text" name="latitude"/>
+    <label for="lognitude">Longitude</>
+    <input type="text" name="longitude"/>
+    <label for="number">Number</label>
+    <input type="number" name="number" min="1" default="1"/>
+    <button type="submit">Search</button>
+    </form>
+</div>
+
+
+{% endblock %}
